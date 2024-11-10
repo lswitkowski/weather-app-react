@@ -1,9 +1,22 @@
+h1{text-align: left;}
+ul{margin: 0;
+  padding: 0;
+text-align: left;}
+li{ font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  list-style: none;}
+
+form{display:flex;
+}
+.form-input{min-width: 60%;}
+
+
 .Weather
-{
-    border: 1px solid darkorchid;
+{border: 1px solid darkorchid;
 margin: 0px auto;
 border-radius: 5px;
-box-shadow: 10px 10px 5px #41326414;
+box-shadow: 2px 2px 4px 3px #1b0a4414;
 background-color: rgba(229, 230, 255, 0.4)
 }
 
@@ -36,20 +49,31 @@ margin: 0;
 padding: 0;
 position: relative;
 top:-24px;
+height: 64px;
 }
 
-h1{text-align: left;}
-ul{margin: 0;
-  padding: 0;
-text-align: left;}
 
-li{ font-size: 16px;
+
+
+@media (max-width: 768px){
+.Weather{display:block;
+margin: 0px auto;}
+li{font-size: 14px;}
+
+.weather-icon{
+height: 34px;
+top: -2px;}
+.Weather .temperature {
+  font-size: 44px;
+  line-height: 44px;
+   top: 10px;
+}
+.Weather .unit {
+  font-size: 14px;
   font-weight: 400;
-  line-height: 19px;
-  list-style: none;}
+  position: relative;
+  line-height: 1;
+  top: -12px;
+}}
 
-form{display:inline-flex;}
 
-    .form-input{
-        min-width: 50%;
-    text-align: center;}
