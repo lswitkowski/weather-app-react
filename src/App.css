@@ -1,13 +1,14 @@
 .App {
   text-align: center;
+  max-width:800px;
+
 }
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+
+
+footer{font-size: 11px;}
+
+@media (min-width: 768px){
+.Weather{display:block;
+margin: 0px auto;}  
 }
