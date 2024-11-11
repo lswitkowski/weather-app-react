@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Form from "./Form";
+import TempConversion from "./TempConversion.js";
 import FormatDate from "./FormatDate.js";
 import axios from "axios";
 import "./Weather.css";
@@ -51,31 +51,32 @@ export default function Weather(props) {
           <input className="form-button" type="submit" value="Search" />
         </form>
 
-        <h1 class="mt-5 mb-3">{weatherData.city}</h1>
-        <div className="row mt-3 justify-content-evenly">
-          <div className="col-md-4">
+        <h1 class="mt-5 mb-3">
+          {weatherData.city}{" "}
+          <img
+            className="weather-icon"
+            src={weatherData.icon}
+            alt="sunny logo"
+          />
+        </h1>
+        <div className="row mt-5 mb-5 justify-content-evenly">
+          <div className="col-md-4 mb-3">
             <ul>
               <li>
                 <FormatDate date={weatherData.date} />
               </li>
-              <li>{weatherData.description}</li>
+              <li class="text-capitalize">{weatherData.description}</li>
             </ul>
           </div>
 
-          <div className="col-md-4 ml-0">
-            <img
-              className="weather-icon"
-              src={weatherData.icon}
-              alt="sunny logo"
-            />
-            <span className="temperature">{Math.round(weatherData.temp)}</span>
-            <span className="unit">℃</span>
+          <div className="col-md-4 mb-3">
+            <TempConversion celsius={weatherData.temp} />
           </div>
-          <div className="col-md-4 ml-3">
+          <div className="col-md-4 mb-3">
             <ul>
               <li></li>
               <li>Humidity: {weatherData.humidity}%</li>
-              <li>Wind: {weatherData.wind} km/hr</li>
+              <li>Wind: {weatherData.wind} m/s</li>
             </ul>
           </div>
         </div>
@@ -83,6 +84,6 @@ export default function Weather(props) {
     );
   } else {
     search();
-    return <Form />;
+    return "Loading...";
   }
 }
