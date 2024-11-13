@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import TempConversion from "./TempConversion.js";
 import FormatDate from "./FormatDate.js";
 import WeatherForecast from "./WeatherForecast.js";
 import axios from "axios";
@@ -52,7 +51,7 @@ export default function Weather(props) {
           <input className="form-button" type="submit" value="Search" />
         </form>
 
-        <h1 class="mt-5 mb-3">
+        <h1 className="mt-5 mb-3">
           {weatherData.city}{" "}
           <img
             className="weather-icon"
@@ -61,21 +60,19 @@ export default function Weather(props) {
           />
         </h1>
         <div className="row mt-5 mb-5 justify-content-evenly">
-          <div className="col-md-4 mb-3">
+          <div className="col-md-5 mb-3">
             <ul>
               <li className="opacity">
                 <FormatDate date={weatherData.date} />
               </li>
-              <li class="text-capitalize opacity">{weatherData.description}</li>
+              <li className="text-capitalize opacity">{weatherData.description}</li>
             </ul>
           </div>
-
-          <div className="col-md-4 mb-3">
-            <TempConversion celsius={weatherData.temp} />
+          <div className="col-md-3 mb-3">
+            <div className="temperature">{Math.round(weatherData.temp)}<span className="unit">℃</span></div>
           </div>
           <div className="col-md-4 mb-3">
             <ul>
-              <li></li>
               <li className="opacity">Humidity: {weatherData.humidity}%</li>
               <li className="opacity">Wind: {weatherData.wind} m/s</li>
             </ul>

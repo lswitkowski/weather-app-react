@@ -22,11 +22,9 @@ export default function WeatherForecast(props) {
     axios.get(apiUrl).then(handleResponse);
   }
 
-
-
   if (loaded) {
     return (
-      <div className="WeatherForecast">
+      <div className="WeatherForecast mt-5">
         <div className="row">
           {forecast.map(function (dailyForecast, index) {
             if (index < 6) {
