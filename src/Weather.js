@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TempConversion from "./TempConversion.js";
 import FormatDate from "./FormatDate.js";
+import WeatherForecast from "./WeatherForecast.js";
 import axios from "axios";
 import "./Weather.css";
 
@@ -63,6 +64,7 @@ export default function Weather(props) {
           <div className="col-md-4 mb-3">
             <ul>
               <li>
+                <WeatherForecast city={weatherData.city} />
                 <FormatDate date={weatherData.date} />
               </li>
               <li class="text-capitalize">{weatherData.description}</li>
