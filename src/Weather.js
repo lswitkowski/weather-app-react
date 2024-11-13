@@ -63,11 +63,10 @@ export default function Weather(props) {
         <div className="row mt-5 mb-5 justify-content-evenly">
           <div className="col-md-4 mb-3">
             <ul>
-              <li>
-                <WeatherForecast city={weatherData.city} />
+              <li className="opacity">
                 <FormatDate date={weatherData.date} />
               </li>
-              <li class="text-capitalize">{weatherData.description}</li>
+              <li class="text-capitalize opacity">{weatherData.description}</li>
             </ul>
           </div>
 
@@ -77,9 +76,12 @@ export default function Weather(props) {
           <div className="col-md-4 mb-3">
             <ul>
               <li></li>
-              <li>Humidity: {weatherData.humidity}%</li>
-              <li>Wind: {weatherData.wind} m/s</li>
+              <li className="opacity">Humidity: {weatherData.humidity}%</li>
+              <li className="opacity">Wind: {weatherData.wind} m/s</li>
             </ul>
+          </div>
+          <div>
+            <WeatherForecast city={weatherData.city} />
           </div>
         </div>
       </div>

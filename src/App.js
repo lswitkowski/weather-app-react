@@ -9,7 +9,7 @@ export default function App() {
     <div className="App">
       <div className="container">
         <Weather defaultCity="New York" />
-        <footer>
+        <footer className="m-1">
           This website was coded by{" "}
           <a
             href="https://github.com/lswitkowski/"
