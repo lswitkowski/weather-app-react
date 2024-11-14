@@ -56,7 +56,7 @@ export default function Weather(props) {
           <img
             className="weather-icon"
             src={weatherData.icon}
-            alt="sunny logo"
+            alt="weather logo"
           />
         </h1>
         <div className="row mt-5 mb-5 justify-content-evenly">
